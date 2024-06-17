@@ -151,6 +151,6 @@ body.light-mode #theme-toggle:hover {
     color: white;
 }
 
-.theme-toggle{
+#theme-toggle{
         font-family: "Pixelify Sans", sans-serif;
 }
