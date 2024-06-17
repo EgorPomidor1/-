@@ -4,7 +4,7 @@ body {
     align-items: center;
     background-color: black;
     color: white;
-    font-family: Pixeboy;
+    font-family: "Pixelify Sans", sans-serif;
     font-size: 20px;
     margin: 0;
     height: 100vh;
@@ -19,7 +19,7 @@ body {
 }
 
 #difficulty {
-    font-family: Pixeboy;
+    font-family: "Pixelify Sans", sans-serif;
     font-size: 20px;
     padding: 10px;
     background-color: black;
@@ -65,7 +65,7 @@ body {
 }
 
 #restartBtn {
-    font-family: Pixeboy;
+    font-family: "Pixelify Sans", sans-serif;
     margin-top: 20px;
     padding: 10px 20px;
     background-color: black;
