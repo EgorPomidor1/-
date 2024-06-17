@@ -31,7 +31,7 @@ body.light-mode {
 
 /* ЛГБТ тема */
 body.lgbt-mode {
-    background: linear-gradient(90deg, #ff69b4, #ff4500, #ff0, #008000, #4b0082, #ee82ee);
+    background: linear-gradient(36deg, #ff69b4, #ff4500, #ff0, #008000, #4b0082, #ee82ee);
     background-size: 400% 400%;
     animation: lgbt-rainbow 10s ease infinite;
     color: white;
@@ -103,7 +103,7 @@ body.dark-mode #theme-toggle:hover {
 }
 
 body.lgbt-mode #theme-toggle:hover {
-    background: linear-gradient(90deg, #ff69b4, #ff4500, #ff0, #008000, #4b0082, #ee82ee);
+    background: linear-gradient(150deg, #ff69b4, #ff4500, #ff0, #008000, #4b0082, #ee82ee);
     background-size: 200% 200%;
     animation: lgbt-rainbow-btn-hover 2s linear infinite;
 }
