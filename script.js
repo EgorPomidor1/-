@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (theme === 'dark-mode') {
             themeToggle.textContent = 'БЕЛАЯ ТЕМА';
         } else if (theme === 'lgbt-mode') {
-            themeToggle.textContent = 'ПИДОР';
+            themeToggle.textContent = 'ОСОБЕННЫЙ РЕЖИМ';
         }
     }
 });
