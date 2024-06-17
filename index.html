@@ -5,26 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake Game</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>ИГРА ЗМЕЯ. ТВ0И 0ЧКИ: <span id="score">0</span></h1>
+    <h1>ИГРА ЗМЕЯ. ТВОИ ОЧКИ: <span id="score">0</span></h1>
     <canvas id="gameCanvas" width="500" height="500"></canvas>
     <div id="controls">
-        <label for="difficulty">СЛ0ЖН0СТИ:</label>
+        <label for="difficulty">СЛОЖНОСТИ:</label>
         <select id="difficulty">
             <option value="easy">ИЗИ</option>
             <option value="medium" selected>СРЕДНЕ</option>
-            <option value="hard">ХАРДК0Р</option>
+            <option value="hard">ХАРДКОР</option>
         </select>
     </div>
     <div id="gameOverModal">
         <p id="gameOverText"></p>
-        <button id="restartBtn">П0 Н0В0Й</button>
+        <button id="restartBtn">ПО НОВОЙ</button>
     </div>
-
+    <button id="theme-toggle">Switch Theme</button>
     <script src="snakeGame.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
