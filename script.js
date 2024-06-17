@@ -31,11 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateButtonText(theme) {
         if (theme === 'light-mode') {
-            themeToggle.textContent = 'Switch to Dark Theme';
+            themeToggle.textContent = 'ТЕМНАЯ ТЕМА';
         } else if (theme === 'dark-mode') {
-            themeToggle.textContent = 'Switch to Light Theme';
+            themeToggle.textContent = 'БЕЛАЯ ТЕМА';
         } else if (theme === 'lgbt-mode') {
-            themeToggle.textContent = 'LGBT Theme Activated';
+            themeToggle.textContent = 'ПИДОР';
         }
     }
 });
