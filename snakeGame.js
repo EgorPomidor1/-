@@ -154,27 +154,4 @@ restartBtn.addEventListener('click', () => {
 
 resetGame();
 
-document.addEventListener('DOMContentLoaded', () => {
-    const themeToggle = document.getElementById('theme-toggle');
-    const currentTheme = localStorage.getItem('theme');
 
-    if (currentTheme) {
-        document.body.classList.add(currentTheme);
-        if (currentTheme === 'light-mode') {
-            themeToggle.textContent = 'Switch to Dark Theme';
-        }
-    }
-
-    themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
-
-        let theme = 'dark-mode';
-        if (document.body.classList.contains('light-mode')) {
-            theme = 'light-mode';
-            themeToggle.textContent = 'Switch to Dark Theme';
-        } else {
-            themeToggle.textContent = 'Switch to Light Theme';
-        }
-        localStorage.setItem('theme', theme);
-    });
-});
