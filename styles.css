@@ -1,4 +1,6 @@
 /* styles.css */
+
+/* Основные стили для body */
 body {
     display: flex;
     flex-direction: column;
@@ -15,11 +17,110 @@ body {
     user-select: none;  
 }
 
+/* Темная тема */
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+/* Светлая тема */
 body.light-mode {
     background-color: white;
     color: black;
 }
 
+/* ЛГБТ тема */
+body.lgbt-mode {
+    background: linear-gradient(90deg, #ff69b4, #ff4500, #ff0, #008000, #4b0082, #ee82ee);
+    background-size: 400% 400%;
+    animation: lgbt-rainbow 10s ease infinite;
+    color: white;
+}
+
+/* Анимация для ЛГБТ темы */
+@keyframes lgbt-rainbow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Кнопка для переключения темы */
+#theme-toggle {
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Цвета кнопки в зависимости от темы и hover */
+body.dark-mode #theme-toggle {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+
+body.light-mode #theme-toggle {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+body.lgbt-mode #theme-toggle {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: 1px solid white;
+    animation: lgbt-rainbow-btn 2s linear infinite;
+}
+
+/* Анимация для кнопки в ЛГБТ теме */
+@keyframes lgbt-rainbow-btn {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Hover эффект для кнопки в разных темах */
+#theme-toggle:hover {
+    background-color: white;
+    color: black;
+}
+
+body.dark-mode #theme-toggle:hover {
+    background-color: black;
+    color: white;
+}
+
+body.lgbt-mode #theme-toggle:hover {
+    background: linear-gradient(90deg, #ff69b4, #ff4500, #ff0, #008000, #4b0082, #ee82ee);
+    background-size: 200% 200%;
+    animation: lgbt-rainbow-btn-hover 2s linear infinite;
+}
+
+@keyframes lgbt-rainbow-btn-hover {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Остальные стили */
 #controls {
     margin-top: 20px;
 }
@@ -34,22 +135,11 @@ body.light-mode {
     text-align-last: center;
 }
 
-body.light-mode #difficulty {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
-}
-
 #difficulty option {
     background-color: black;
     color: white;
     font-size: 20px;
-    border-radius: 5px 5px 5px 5px;
-}
-
-body.light-mode #difficulty option {
-    background-color: white;
-    color: black;
+    border-radius: 5px;
 }
 
 #difficulty:hover {
@@ -60,12 +150,20 @@ body.light-mode #difficulty option {
 
 #gameCanvas {
     border: 1px solid white;
-    background-color: black;
+    background-color: transparent; /* Прозрачный фон для игрового поля */
+}
+
+/* Границы игрового поля */
+body.dark-mode #gameCanvas {
+    border: 1px solid white;
 }
 
 body.light-mode #gameCanvas {
     border: 1px solid black;
-    background-color: white;
+}
+
+body.lgbt-mode #gameCanvas {
+    border: 1px solid black;
 }
 
 #gameOverModal {
@@ -82,18 +180,8 @@ body.light-mode #gameCanvas {
     border-radius: 10px;
 }
 
-body.light-mode #gameOverModal {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: rgb(70, 70, 70);
-    border: 2px solid black;
-}
-
 #scoreDisplay {
     color: white;
-}
-
-body.light-mode #scoreDisplay {
-    color: black;
 }
 
 #restartBtn {
@@ -106,51 +194,37 @@ body.light-mode #scoreDisplay {
     cursor: pointer;
 }
 
-body.light-mode #restartBtn {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
-}
-
 #restartBtn:hover {
     background-color: white;
     color: black;
-}
-
-body.light-mode #restartBtn:hover {
-    background-color: black;
-    color: white;
 }
 
 p {
     margin-top: 20px;
 }
 
-#theme-toggle {
+#lgbt-symbols {
+    display: none;
     margin-top: 20px;
-    padding: 10px 20px;
-    background-color: black;
-    color: white;
-    border: 1px solid white;
-    cursor: pointer;
-}
-
-body.light-mode #theme-toggle {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
-}
-
-#theme-toggle:hover {
-    background-color: white;
-    color: black;
-}
-
-body.light-mode #theme-toggle:hover {
-    background-color: black;
+    text-align: center;
+    font-size: 24px;
     color: white;
 }
 
-#theme-toggle{
-        font-family: "Pixelify Sans", sans-serif;
+body.lgbt-mode #lgbt-symbols {
+    display: block;
+}
+
+body.lgbt-mode #lgbt-symbols::before {
+    content: "🏳️‍🌈 🌈 🏳️‍⚧️ 🌈 🏳️‍🌈";
+    animation: lgbt-symbol-animation 10s infinite;
+}
+
+@keyframes lgbt-symbol-animation {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
 }
