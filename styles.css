@@ -150,3 +150,7 @@ body.light-mode #theme-toggle:hover {
     background-color: black;
     color: white;
 }
+
+.theme-toggle{
+        font-family: "Pixelify Sans", sans-serif;
+}
