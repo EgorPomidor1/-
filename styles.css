@@ -1,5 +1,3 @@
-/* styles.css */
-
 /* Основные стили для body */
 body {
     display: flex;
@@ -15,6 +13,7 @@ body {
     -moz-user-select: none;
     -khtml-user-select: none;
     user-select: none;  
+    overflow-y: hidden; /* Отключаем вертикальный скролл */
 }
 
 /* Темная тема */
@@ -233,6 +232,14 @@ body.lgbt-mode #lgbt-symbols::before {
 @media (max-width: 600px) {
     body {
         font-size: 16px;
+        overflow-x: hidden; /* Запрещаем горизонтальный скроллинг */
+        overflow-y: hidden; /* Отключаем вертикальный скролл */
+    }
+
+    #gameCanvas {
+        width: 95%; /* Уменьшаем ширину игрового поля */
+        max-width: 400px; /* Максимальная ширина игрового поля */
+        margin: 0 auto; /* Центрируем игровое поле */
     }
 
     #theme-toggle {
@@ -247,11 +254,6 @@ body.lgbt-mode #lgbt-symbols::before {
     #difficulty {
         font-size: 16px;
         padding: 8px;
-    }
-
-    #gameCanvas {
-        width: 100%;
-        height: auto;
     }
 
     #gameOverModal {
@@ -270,9 +272,4 @@ body.lgbt-mode #lgbt-symbols::before {
     #lgbt-symbols {
         font-size: 20px;
     }
-}
-
-/* Отключение прокрутки */
-body.no-scroll {
-    overflow: hidden;
 }
