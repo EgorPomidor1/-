@@ -231,6 +231,8 @@ body.lgbt-mode #lgbt-symbols::before {
 /* Добавляем стили для телефонов */
 @media (max-width: 600px) {
     body {
+        position: fixed;
+        width: 100%;
         font-size: 16px;
         overflow-x: hidden; /* Запрещаем горизонтальный скроллинг */
         overflow-y: hidden; /* Отключаем вертикальный скролл */
