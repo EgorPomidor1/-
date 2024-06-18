@@ -271,3 +271,8 @@ body.lgbt-mode #lgbt-symbols::before {
         font-size: 20px;
     }
 }
+
+/* Отключение прокрутки */
+body.no-scroll {
+    overflow: hidden;
+}
