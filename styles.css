@@ -31,7 +31,7 @@ body.light-mode {
 
 /* ЛГБТ тема */
 body.lgbt-mode {
-    background: linear-gradient(36deg, #ff69b4, #ff4500, #ff0, #008000, #4b0082, #ee82ee);
+    background: linear-gradient(90deg, #ff69b4, #ff4500, #ff0, #008000, #4b0082, #ee82ee);
     background-size: 400% 400%;
     animation: lgbt-rainbow 10s ease infinite;
     color: white;
@@ -103,7 +103,7 @@ body.dark-mode #theme-toggle:hover {
 }
 
 body.lgbt-mode #theme-toggle:hover {
-    background: linear-gradient(150deg, #ff69b4, #ff4500, #ff0, #008000, #4b0082, #ee82ee);
+    background: linear-gradient(90deg, #ff69b4, #ff4500, #ff0, #008000, #4b0082, #ee82ee);
     background-size: 200% 200%;
     animation: lgbt-rainbow-btn-hover 2s linear infinite;
 }
@@ -226,5 +226,48 @@ body.lgbt-mode #lgbt-symbols::before {
     }
     50% {
         opacity: 0.5;
+    }
+}
+
+/* Добавляем стили для телефонов */
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+
+    #theme-toggle {
+        margin-top: 10px;
+        padding: 8px 16px;
+    }
+
+    #controls {
+        margin-top: 10px;
+    }
+
+    #difficulty {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    #gameCanvas {
+        width: 100%;
+        height: auto;
+    }
+
+    #gameOverModal {
+        padding: 20px;
+    }
+
+    #restartBtn {
+        margin-top: 10px;
+        padding: 8px 16px;
+    }
+
+    p {
+        margin-top: 10px;
+    }
+
+    #lgbt-symbols {
+        font-size: 20px;
     }
 }
