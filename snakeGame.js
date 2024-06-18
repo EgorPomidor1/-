@@ -19,6 +19,11 @@ let score = 0;
 let gameInterval;
 let gameSpeed = 100;
 
+let touchStartX = 0;
+let touchStartY = 0;
+let touchEndX = 0;
+let touchEndY = 0;
+
 function resetGame() {
     snake = [{ x: 10, y: 10 }];
     snakeLength = 1;
@@ -121,6 +126,44 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
+canvas.addEventListener('touchstart', handleTouchStart, false);
+canvas.addEventListener('touchmove', handleTouchMove, false);
+canvas.addEventListener('touchend', handleTouchEnd, false);
+
+function handleTouchStart(event) {
+    const firstTouch = event.touches[0];
+    touchStartX = firstTouch.clientX;
+    touchStartY = firstTouch.clientY;
+}
+
+function handleTouchMove(event) {
+    if (event.touches.length > 1) {
+        return; // Игнорировать множественные касания
+    }
+    const touch = event.touches[0];
+    touchEndX = touch.clientX;
+    touchEndY = touch.clientY;
+}
+
+function handleTouchEnd() {
+    const diffX = touchEndX - touchStartX;
+    const diffY = touchEndY - touchStartY;
+    
+    if (Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX > 0 && direction.x === 0) {
+            direction = { x: 1, y: 0 }; // Свайп вправо
+        } else if (diffX < 0 && direction.x === 0) {
+            direction = { x: -1, y: 0 }; // Свайп влево
+        }
+    } else {
+        if (diffY > 0 && direction.y === 0) {
+            direction = { x: 0, y: 1 }; // Свайп вниз
+        } else if (diffY < 0 && direction.y === 0) {
+            direction = { x: 0, y: -1 }; // Свайп вверх
+        }
+    }
+}
+
 difficultySelect.addEventListener('change', (event) => {
     switch (event.target.value) {
         case 'easy':
@@ -153,5 +196,3 @@ restartBtn.addEventListener('click', () => {
 });
 
 resetGame();
-
-
